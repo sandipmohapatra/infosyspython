@@ -10,9 +10,10 @@ Prepare a word document
 
 Thinks need to be done
 1)Project explaination or Abstract
-2)UML Diagram
+2)UML Diagram and DFD
 3)software and hardware Requirement
 4)coding.
+5)how to run the project steps
 -----------------------------------------------------------------------
 team-1
 Aashish,karan,keerthi,kumar Harsha,Srikar
