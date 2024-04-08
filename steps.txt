@@ -1,0 +1,11 @@
+1)create a github 
+2)upload whatever you do in the daily basis.
+3)mail the link to me.
+4)how to run the project steps
+5)software requirement
+-------------------------------------------------------
+Thinks need to be done
+1)Project explaination or Abstract
+2)UML Diagram
+3)software and hardware Requirement
+4)coding.
