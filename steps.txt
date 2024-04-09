@@ -25,7 +25,7 @@ team-3
 Renuka,saikat,sanjeevi,sayantani,venkata praveen
 ------------------------------------------------------------------
 team-4
-Sharan,Shree Varuna,Shyam Singh,Sreekanth
+Sharan,Shree Varuna,Shyam Singh,Sreekanth,suryadeva
 -------------------------------------------------------------------------------
 
 
