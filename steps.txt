@@ -10,22 +10,18 @@ Prepare a word document
 
 Thinks need to be done
 1)Project explaination or Abstract
-2)UML Diagram and DFD
+2)UML Diagram (class digram,usecase digram,sequence digram)and DFD
 3)software and hardware Requirement
 4)coding.
 5)how to run the project steps
 -----------------------------------------------------------------------
 team-1
-Aashish,karan,keerthi,kumar Harsha,Srikar
 --------------------------------------------------------------------------
 team-2
-Marri durga,nanda kishore,Nettem,priya,Tanishk
 -------------------------------------------------------------------------------
 team-3
-Renuka,saikat,sanjeevi,sayantani,venkata praveen
 ------------------------------------------------------------------
 team-4
-Sharan,Shree Varuna,Shyam Singh,Sreekanth,suryadeva
 -------------------------------------------------------------------------------
 
 
