@@ -26,6 +26,12 @@ print(list2)
    
 print(type(list1))  
 print(type(list2))  
+---------------------------------------------
+1)it will display in the same order
+2)heterogeneous objects are allowed
+3)diplicate data is allowed
+4)growable in nature
+5)values should be enclosed in a square brackets.
 -------------------------------------------------------------------------------------
 set:-
 --------------
@@ -43,3 +49,9 @@ print(type(Employee))
 print("printing Employee data .... ")        
 print(Employee) 
 ---------------------------------------------------------------------
+tuple:-
+t=(10,20,30,40,50)
+type(t)
+
+tuple data type is exactly same as list data type except that it is immutable (we cannot change the value)
+----------------------------------------------------------------------------------------------------
