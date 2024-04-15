@@ -14,14 +14,19 @@ Thinks need to be done
 3)software and hardware Requirement
 4)coding.
 5)how to run the project steps
------------------------------------------------------------------------
+-------------------------------------------------Online food Delivery----------------------
 team-1
+Alok,Atmaram,pallavi,Deepthi,Vaishnavi
 --------------------------------------------------------------------------
 team-2
+Dipesh,Lahari,Grishma,Harsh,Vishnu
 -------------------------------------------------------------------------------
 team-3
+Harshavardhan,Jitendra,Nisha,Sahil,vikash
 ------------------------------------------------------------------
 team-4
+Sivanagalakshmi,Sreeja,Thippeswamy,Anitha,tulika,samarth
 -------------------------------------------------------------------------------
+
 
 
