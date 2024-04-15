@@ -1,0 +1,45 @@
+Data types in Python
+---------------------------------
+1)int
+2)float
+3)complex
+4)bool
+5)str
+6)byte
+7)bytearray
+8)range
+9)list
+10)tuple
+11)set
+12)frozenset
+13)dict
+14)None
+------------------------------------------------------------------
+list:-
+example 1
+------------------
+list1 = [1, 2, "Python", "Program", 15.9,10,10.32]      
+list2 = ["Amy", "Ryan", "Henry", "Emma"]    
+ 
+print(list1)  
+print(list2)  
+   
+print(type(list1))  
+print(type(list2))  
+-------------------------------------------------------------------------------------
+set:-
+--------------
+Days = set(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])    
+print(Days)    
+print(type(Days))    
+print("looping through the set elements ... ")    
+for i in Days:    
+    print(i)    
+-----------------------------------------------------------------------------------
+dict :- It contain key and value pair
+--------------------------------------------------------
+Employee = {"Name": "Johnny", "Age": 32, "salary":26000,"Company":"TCS"}        
+print(type(Employee))        
+print("printing Employee data .... ")        
+print(Employee) 
+---------------------------------------------------------------------
