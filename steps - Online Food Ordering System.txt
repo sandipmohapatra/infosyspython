@@ -1,0 +1,32 @@
+steps to follow
+-----------------------------
+1)create a github account.
+2)upload whatever you do in the daily basis.
+3)mail github link to me.
+4)how to run the project steps
+5)software requirements
+-------------------------------------------------------
+Prepare a word document
+
+Thinks need to be done
+1)Project explaination or Abstract
+2)UML Diagram (class digram,usecase digram,sequence digram)and DFD
+3)software and hardware Requirement
+4)coding.
+5)how to run the project steps
+-------------------------------------------------Online food Delivery----------------------
+team-1
+Alok,Atmaram,pallavi,Deepthi,Vaishnavi
+--------------------------------------------------------------------------
+team-2
+Dipesh,Lahari,Grishma,Harsh,Vishnu
+-------------------------------------------------------------------------------
+team-3
+Harshavardhan,Jitendra,Nisha,Sahil,vikash
+------------------------------------------------------------------
+team-4
+Sivanagalakshmi,Sreeja,Thippeswamy,Anitha,tulika,samarth
+-------------------------------------------------------------------------------
+
+
+
