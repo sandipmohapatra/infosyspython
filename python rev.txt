@@ -1,0 +1,74 @@
+Data types
+------------------
+1)int
+2)float
+3)complex
+4)bool
+5)str
+6)byte
+7)bytearray
+8)range
+9)list
+10)tuple
+11)set
+12)frozenset
+13)dict
+14)None
+-----------------------------------------------------------
+class and objects
+function
+database connectivity(oracle,mysql,sqlite)
+logger(info,debug,error,warning,critical)
+-------------------------------------------------------------------
+list :-
+list1 = [1, 2, "Python", "Program", 15.9,10,10.32]      
+list2 = ["Amy", "Ryan", "Henry", "Emma"]   
+
+print(list1)  
+print(list2)  
+
+print(type(list1))  
+print(type(list2))  
+-------------------------------------------------list-----------------------------
+1)insertion order is preserved
+2)heterogeneous objects are allowed
+3)duplicate are allowed
+4)growable in natuire
+5)values are enclosed in square brackets
+6)mutable (can be changed)
+------------------------------------------------------------------------------------------
+tuple:-
+--------------
+t=(10,20,30,40,50)
+type(t)
+-----------------------tuple--------------------------
+1)immutable (cannot be changed)
+2)insertion order is preserved
+3)heterogeneous objects are allowed
+4)growable in natuire
+5)values are enclosed in cicular brackets
+------------------------------------------------------------------
+set:- 
+--------------
+Days = set(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])    
+print(Days)    
+print(type(Days))    
+print("looping through the set elements ... ")    
+for i in Days:    
+    print(i)  
+----------------------------------------------------------
+1)mutable (can be changed)
+2)it doesnot allow duplicate data
+3)undered collection of unique object
+--------------------------------------------------------------------------------------------
+dict
+----------
+Employee = {"Name": "Johnny", "Age": 32, "salary":26000,"Company":"TCS"}        
+print(type(Employee))        
+print("printing Employee data .... ")        
+print(Employee) 
+-----------------------------------------------
+1)mutable (can be changed)
+2)we have key and value pair.where key should not be duplicate value can be duplicate
+-----------------------------------------------------------------------------------
+
