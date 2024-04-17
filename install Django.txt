@@ -18,6 +18,7 @@ pip install django
 Then create django project named mysite
 
 django-admin startproject mysite
+cd mysite
 ----------------------------------------------------------------------------------------
 to run
 (venv) C:\Users\91977\Desktop\infosysdjango\mysite>python manage.py runserver 127.0.0.1:8090
@@ -31,7 +32,164 @@ mysite
 	asgi.py
 manage.py
 -----------------------------------------------------------------------------
-on the browser --127.0.0.1:8090
------------------------------------------------------------
+on the browser type-->127.0.0.1:8090
+-----------------------OR------------------------------------
 localhost:8090
 ----------------------------------------------------------------------
+to create an application
+py manage.py startapp testapp
+----------------------------------------------------------------------
+mysite
+	mysite
+		__init__.py
+		settings.py
+		urls.py
+		wsgi.py
+		asgi.py
+	testapp
+		migrations(database)
+		__init__.py
+		views.py
+		models.py
+		admin.py
+		apps.py
+		tests.py
+manage.py
+-----------------------------------------------------------------------------------
+Example 1:-
+testapp.view.py
+from django.http import HttpResponse
+
+# Create your views here.
+def welcome(request):
+    return HttpResponse('<center><h1>Welcome to Django Project</h1></center><hr>')
+------------------------------------------------------------------------------------------------------------------------------
+mysite.urls.py
+-------------------------------
+from testapp import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('welcome/',views.welcome),
+]
+------------------------------------------------------------------------------------------------------------------------------------
+mysite.settings.py
+-------------------------------------
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'testapp'
+]
+-------------------------------------------------------------------------------------------------------------------------------------
+Example-2
+--------------------------
+from django.http import HttpResponse
+import datetime
+
+# Create your views here.
+def welcome(request):
+    date=datetime.datetime.now()
+    s='<h1>The current date and time is :'+str(date)+'</h1>'
+    return HttpResponse(s)
+--------------------------------------------------------------------------------------------------------------------------------
+multiple functions
+-------------------------------
+Example-3
+--------------------------
+to create an application
+py manage.py startapp testapp
+----------------------------------------------------------
+testapp.view.py
+----------------------------------------------------------
+from django.shortcuts import render
+from django.http import HttpResponse
+import datetime
+
+# Create your views here.
+def welcome(request):
+    return HttpResponse('<center><h1>Welcome to Django Project</h1></center><hr>')
+
+
+def date_display(request):
+    date=datetime.datetime.now()
+    s='<h1>The current date and time is :'+str(date)+'</h1>'
+    return HttpResponse(s)
+
+-------------------------------------------------------------------------------------------------
+mysite.urls.py
+-----------------------------------------
+from testapp import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('welcome/',views.welcome),
+    path('date/',views.date_display),
+        
+]
+-----------------------------------------------------------------------------------
+mysite.settings.py
+-------------------------------------
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'testapp'
+]
+---------------------------------------------------------------------------------------------
+Example-4
+--------------------------
+to create an application
+py manage.py startapp testapp
+py manage.py startapp timeapp
+py manage.py startapp greetingapp
+
+3 application created
+---------------------------------------------------
+mysite.settings.py
+-------------------------------------
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'testapp',
+     'greetingapp',
+     'timeapp'
+]
+---------------------------------------------------------------------------------------
+mysite.urls.py
+--------------------------------------------------------------------------------------------
+from greetingapp.views import greetings_view  <----function name
+from timeapp.views import time_info
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('welcome/',welcome),
+    path('greeting/',greetings_view),<------function name
+    path('time/',time_info),
+]
+---------------------------------------------OR-----------------------------------------------
+---------------------------------------------------------------------------------------
+mysite.urls.py
+--------------------------------------------------------------------------------------------
+from greetingapp import views as v1 
+from timeapp import views as v2
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('welcome/',welcome),
+    path('greeting/',v1.greetings_view),
+    path('time/',v2.time_info),
+]
+-----------------------------------------------------------------------------------------------------------
+example-5
+------------------------
