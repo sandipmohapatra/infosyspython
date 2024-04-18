@@ -194,3 +194,32 @@ urlpatterns = [
 -----------------------------------------------------------------------------------------------------------
 example-5
 ------------------------
+1)create folder templates inside your application (testapp)
+2)create a html file inside it.(index.html)
+------------
+<html>
+<center><h1>Welcome to Django</h1></center><hr>
+<table>
+<tr><td>Enter your name</td><td><input type=text name=t1 size=20></td></tr>
+<tr><td>Enter your email</td><td><input type=text name=t2 size=20></td></tr>
+<tr><td>Enter your address</td><td><input type=text name=t3 size=20></td></tr>
+<tr><td>Enter your phoneno</td><td><input type=text name=t3 size=20></td></tr>
+<tr><td></td><td><input type=Button value="submit"></td></tr>
+</table>
+</html>
+-------------------------------------------------------------------
+views.py
+-----------------
+def index(request):
+    return render(request,'index.html')
+------------------------------------------------------------------
+urls.py
+--------------
+urlpatterns = [
+    path('admin/', admin.site.urls),
+     path('first/',views.welcome),
+     path('second/',views.geetings),
+      path('index/',views.index),
+]
+------------------------------------------------------------------------------
+
