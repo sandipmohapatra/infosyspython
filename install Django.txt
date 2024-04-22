@@ -221,5 +221,116 @@ urlpatterns = [
      path('second/',views.geetings),
       path('index/',views.index),
 ]
-------------------------------------------------------------------------------
+-------------------------------------------22nd April 2024-----------------------------------
+python -m venv venv
+venv\Scripts\activate
+pip install django
+django-admin startproject mysite
+cd mysite
+py manage.py startapp testapp
+python manage.py runserver 127.0.0.1:8090
+---------------------------------------------------------------------------------------
+example-6
+-----------------------
+ models.py
+------------------------
+How to create a model
+----------------------------------
+from django.db import models
+
+
+class Employees(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    Dept_name = models.CharField(max_length=20)
+    joining_date = models.DateField()
+    salary = models.IntegerField()
+---------------------------------------------------------------------------------------------------
+Now, this Employees model will automatically create a table equivalent to this.
+
+CREATE TABLE "myApp_employees" (
+   "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, 
+   "first_name" varchar(30) NOT NULL, 
+   "last_name" varchar(30) NOT NULL, 
+   "Dept_name" varchar(20) NOT NULL, 
+   "joining_date" date NOT NULL, 
+   "salary" integer NOT NULL
+);
+COMMIT;
+-------------------------------------------------------------------------------------------------------------------------------
+In the example, we are creating a model in the “myApp” application. So, Django will automatically generate a table name “myApp_employees” by using model metadata.
+
+Additionally, an id field will also be added to the table. This id is a NOT NULL, AUTOINCREMENT, PRIMARY KEY field.
+-----------------------------------------------------------------------------------------------
+Make Migration in Django
+After successfully creating a model class.
+
+First, we need to tell the Django server that we want to use a model. For this, first, we need to use the settings.py file of the Django project ‘myProject’. So, open the settings.py file and give the name of your app having a model in the INSTALLED_APPS section.
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'testapp',
+]
+
+--------------------------------------------------------------------------------------
+Next, we need to run the migrations so the table can be created. Django uses migrations to propagate changes to your models (adding a field, deleting a model, etc.) to your database schema.
+
+First, run the makemigrations command 
+
+python manage.py makemigrations
+---------------------------------------------------------------------------------------------------
+This command helps to create migrations based on the changes detected in our models. After this, we need to run a migrate command
+
+python manage.py migrate
+---------------------------------------------------------------------------------------------------------------------
+Django uses the model class to represent database tables and objects as a record in the table. 
+
+ we will be using a Python shell, and to open the shell, we have run the following command in our project directory.
+
+python manage.py shell
+---------------------------------------------------------------------------
+we can import the “Employees” model from our myApp application.
+
+from testapp.models import Employees
+-------------------------------------------------------------------
+Now to create an object, we have to pass the values of the fields as an argument to the model class. A simple example of the Employees model is given below.
+
+emp = Employees(first_name='Sumeet', last_name='kumar', Dept_name='Technical', joining_date='2020-08-23', salary=25000)
+
+In the example, we have created an object named “emp” and it is used to store 5 fields in the Employees table. Next, to store this record in the table, we have to use the save() method. In Django, the save() method is used to implement the SQL insert. Here is how we should use the save() method.
+
+emp.save()
+----------------------------------------------------------------------------------------
+How to use the model in view of Django
+In this section, we will learn how to access and use the model in view of a Django application.
+
+Now, as discussed in the previous section, the first step is to import the required model into the view. For this, simply use the import statement. By importing the model, we can easily access the model in the view.
+
+from app.models import ModelName
+Now the usability of the model in a view totally depends upon the requirement. If we want to insert records in the table then, we have to create an object and insert it using the save() method.
+
+Another requirement can be accessing the model data and then using it for some operation. For this implementation, consider the following code.
+
+ModelName.objects.all()
+Employeesemp.save()
+-------------------------------------------------------------------
+Let’s take an example where we will create a view named ‘index’ and this view retrieves all the employees from the database as objects.
+
+To create a view open the views.py file of your Django app ‘myApp’. Then the below code will fetch all the records in the model and can easily iterate through this to get records.
+
+from django.http import HttpResponse
+from testapp.models import Employees
+
+
+def index(request):
+    emp_list = Employees.objects.all().count()
+    return HttpResponse(emp_list)
+
+-------------------------------------------------------------------------------------------------------
+ we simply created an index view that will return the total count of the records available in the Employees model.
 
