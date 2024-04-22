@@ -215,6 +215,8 @@ def index(request):
 ------------------------------------------------------------------
 urls.py
 --------------
+from testapp import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
      path('first/',views.welcome),
@@ -300,7 +302,7 @@ from testapp.models import Employees
 -------------------------------------------------------------------
 Now to create an object, we have to pass the values of the fields as an argument to the model class. A simple example of the Employees model is given below.
 
-emp = Employees(first_name='John', last_name='kumar', Dept_name='Technical', joining_date='2020-08-23', salary=25000)
+emp = Employees(first_name='Madhu', last_name='kumar', Dept_name='Technical', joining_date='2020-08-23', salary=25000)
 
 In the example, we have created an object named “emp” and it is used to store 5 fields in the Employees table. Next, to store this record in the table, we have to use the save() method. In Django, the save() method is used to implement the SQL insert. Here is how we should use the save() method.
 
