@@ -345,3 +345,144 @@ urlpatterns = [
     path('data/',views.index),
 ]
 ---------------------------------------------------------------------------------------
+create your css files in static folder
+<link rel="stylesheet" href="{% static 'css/c1.css' %}" >
+for external css
+--------------------------------------------------------------------
+example-7
+-------------------
+<form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+<button type="submit">Submit</button>
+----------------------------------------------------------------------------------------------------
+The code snippet you provided is an HTML form written in Django, a web framework for building web applications in Python. The form is using a POST request method (method="post") to send data from the client (browser) to the server. Here are the elements of the code:
+
+<form method="post">: This is the opening tag for a form element. The method attribute is set to "post", which means that when the form is submitted, the data will be sent to the server using the POST method. This is a secure method of transmitting data, as it does not expose the data in the URL.
+
+{% csrf_token %}: This is a Django template tag that inserts a CSRF (Cross-Site Request Forgery) token into the form. CSRF tokens are used to prevent CSRF attacks by ensuring that the form submission originates from the same user who loaded the page. 
+
+The server validates this token upon form submission.
+{{ form.as_p }}: This is another Django template tag that renders the form fields as paragraphs (<p> tags). form refers to a form object that has been passed to the template context, and as_p is a method of the form object that outputs the form fields in HTML paragraph elements.
+
+<button type="submit">Submit</button>: This is a button element of type submit that, when clicked, will submit the form data to the server. The button is labeled with the text "Submit."
+
+In summary, the form uses Django's template tags to include a CSRF token and render the form fields, and it includes a submit button to allow the user to submit the form data using a POST request.
+-------------------------------------------------------------------------------
+create a templates :-
+Register.html
+--------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <title>Registration Form</title>
+</head>
+<style>
+    body{background-color:yellow;}
+    h1{background-color:red;color:yellow;}
+    p{background-color:yellow;color:red;}
+</style>
+    
+<body bgcolor=yellow>
+    
+    <h1>Employee Registration Form</h1><hr>
+    <p>Please fill out the form below:</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button type="submit">Submit</button>
+    </form>
+      
+</body>
+</html>
+
+-----------------------------------------------------
+success.html
+------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form Submission Successful</title>
+</head>
+<style>
+    body{background-color:yellow;}
+    h1{background-color:red;color:yellow;}
+    p{background-color:yellow;color:red;}
+</style>
+<body>
+    <h1>Form Submitted Successfully</h1>
+    <p>Thank you for submitting the form. Your information has been received.</p>
+    
+</body>
+</html>
+--------------------------------------------------------------------------------
+urls.py
+--------------
+from django.contrib import admin
+from django.urls import path
+from testapp import views
+from testapp.views import submit_form
+
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('submit/', submit_form, name='submit_form'),
+    path('submit/success.html/',views.success),
+    path('data/',views.index),
+
+]
+---------------------------------------------------------------------
+models.py
+------------------
+from django.db import models
+
+# Create your models here.
+class UserInfo1(models.Model):
+    name=models.CharField(max_length=200)
+    age=models.IntegerField()
+    mail=models.EmailField()
+    address=models.CharField(max_length=200)
+    phoneno=models.IntegerField()
+----------------------------------------------------------------------------------------
+views.py
+-------------------
+from django.shortcuts import render,redirect
+from django.http import HttpResponse
+from .forms import UserInfoForm1
+from django.urls import reverse
+from testapp.models import UserInfo1
+
+# views.py
+
+def success(request):
+    return render(request,'success.html')
+
+
+def submit_form(request):
+    if request.method == 'POST':
+        form = UserInfoForm1(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success.html')
+# Redirect to a success page
+    else:
+        form = UserInfoForm1()
+    return render(request, 'your_template.html', {'form': form})
+
+
+
+def index(request):
+    emp_list = UserInfo1.objects.all().count()
+    return HttpResponse(emp_list)
+------------------------------------------------------------------------------------------------------------------------
+forms.py
+-------------------------
+from django import forms
+from .models import UserInfo1
+
+class UserInfoForm1(forms.ModelForm):
+    class Meta:
+        model = UserInfo1
+        fields = ['name', 'age','mail', 'address','phoneno']
+----------------------------------------------------------------------------------------
