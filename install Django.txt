@@ -468,7 +468,7 @@ def submit_form(request):
 # Redirect to a success page
     else:
         form = UserInfoForm1()
-    return render(request, 'your_template.html', {'form': form})
+    return render(request, 'register.html', {'form': form})
 
 
 
