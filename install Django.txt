@@ -486,3 +486,47 @@ class UserInfoForm1(forms.ModelForm):
         model = UserInfo1
         fields = ['name', 'age','mail', 'address','phoneno']
 ----------------------------------------------------------------------------------------
+example-8
+-------------------
+index.html
+--------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <h2>Employee Registration Form</h2>
+  <form role="form">
+    <div class="form-group">
+        <label for="name">Name:</label>
+  <input type="text" class="form-control" id="name" placeholder="Enter name">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone no:</label>
+  <input type="number" class="form-control" id="phone" placeholder="Enter phoneno">
+      </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+<input type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Date of Birth:</label>
+        <input type="date" class="form-control" id="dob" placeholder="Enter date of Birth">
+      </div>
+    <div class="checkbox">
+      <label><input type="checkbox"> Remember me</label>
+    </div>
+<button type="submit" class="btn btn-default">Submit</button>
+  </form></div></body></html>
+-----------------------------------------------------------------------------------
