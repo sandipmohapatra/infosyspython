@@ -1,0 +1,36 @@
+pages
+-------------
+1)registration /login
+2)admin
+3)gallery page which will display the previous events pics
+4)Event booking page
+5)Display the upcoming events and details
+6)contact us
+
+
+events
+---------
+birthday
+marriage 
+conference
+new product lunch
+Musical event for new year
+-------------------------------------------------------
+INFOSYS INTERNSHIP – Event Management
+
+Team-1:
+
+Aashish, karan, Keerthi, kumar Harsha, Srikar
+----------------------------------------------------------------------------------------------
+Team-2:
+
+Marri durga, Nanda Kishore, Nettem, Priya, Tanishk, Manaswini
+---------------------------------------------------------------------------------------------------
+Team-3:
+
+Renuka, saikat, sanjeevi, Sayantani, Venkata Praveen
+------------------------------------------------------------------------------------------------------
+Team-4:
+
+Sharan, Shree Varun, Shayam Singh, Sreekanth
+-----------------------------------------------------------------------------------------------------
